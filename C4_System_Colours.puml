@@ -1,0 +1,33 @@
+!define SYSTEM_NEW_COLOR #008000
+!define SYSTEM_LEGACY_COLOR #b71616
+
+skinparam rectangle<<system_new>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SYSTEM_NEW_COLOR
+    BorderColor SYSTEM_NEW_COLOR
+}
+
+skinparam rectangle<<system_legacy>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SYSTEM_LEGACY_COLOR
+    BorderColor SYSTEM_LEGACY_COLOR
+}
+
+!define System_New(e_alias, e_label) rectangle "==e_label" <<system_new>> as e_alias
+!define System_New(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_new>> as e_alias
+
+!define System_Legacy(e_alias, e_label) rectangle "==e_label" <<system_legacy>> as e_alias
+!define System_Legacy(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_legacy>> as e_alias
+
+' Legend needs to be manually done sadly.
+' I should be able to use LAYOUT_WITH_LEGEND but that breaks in the
+' preview
+legend right
+|=              |= Type |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+|<SYSTEM_BG_COLOR>   | Production Asset |
+|<SYSTEM_NEW_COLOR>      | New Asset |
+|<SYSTEM_LEGACY_COLOR>      | Legacy Asset |
+endlegend
