@@ -21,13 +21,3 @@ skinparam rectangle<<system_legacy>> {
 !define System_Legacy(e_alias, e_label) rectangle "==e_label" <<system_legacy>> as e_alias
 !define System_Legacy(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_legacy>> as e_alias
 
-' Legend needs to be manually done sadly.
-' I should be able to use LAYOUT_WITH_LEGEND but that breaks in the
-' preview
-legend right
-|=              |= Type |
-|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
-|<SYSTEM_BG_COLOR>   | Production Asset |
-|<SYSTEM_NEW_COLOR>      | New Asset |
-|<SYSTEM_LEGACY_COLOR>      | Legacy Asset |
-endlegend
