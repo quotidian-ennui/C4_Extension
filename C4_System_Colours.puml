@@ -1,5 +1,6 @@
 !define SYSTEM_NEW_COLOR #008000
 !define SYSTEM_LEGACY_COLOR #b71616
+!define SYSTEM_PSO_COLOR #ffa500
 
 skinparam rectangle<<system_new>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
@@ -15,9 +16,18 @@ skinparam rectangle<<system_legacy>> {
     BorderColor SYSTEM_LEGACY_COLOR
 }
 
+skinparam rectangle<<system_pso>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SYSTEM_PSO_COLOR
+    BorderColor SYSTEM_PSO_COLOR
+}
+
 !define System_New(e_alias, e_label) rectangle "==e_label" <<system_new>> as e_alias
 !define System_New(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_new>> as e_alias
 
 !define System_Legacy(e_alias, e_label) rectangle "==e_label" <<system_legacy>> as e_alias
 !define System_Legacy(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_legacy>> as e_alias
 
+!define System_PSO(e_alias, e_label) rectangle "==e_label" <<system_pso>> as e_alias
+!define System_PSO(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_pso>> as e_alias
